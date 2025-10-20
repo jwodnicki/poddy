@@ -66,12 +66,6 @@ Use `cron` or `systemd` to automate updates:
 
 ---
 
-## 🪪 License
-
-MIT License © 2025 — Your Name
-
----
-
 ## ❤️ Contributing
 
 Pull requests are welcome!
