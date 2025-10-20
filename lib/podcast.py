@@ -5,7 +5,6 @@ import os
 
 
 def fetch(outfile, url, title, artist, cover, bitrate='128', stereo=False):
-    return
     yt_dlp.YoutubeDL({
         'format': 'bestaudio/best',
         'outtmpl': outfile,
@@ -41,6 +40,5 @@ def fetch(outfile, url, title, artist, cover, bitrate='128', stereo=False):
 
 
 def get_metadata(outfile):
-    return 123, '00:12:33'
     t = int(mutagen.mp3.MP3(outfile).info.length)
     return os.path.getsize(outfile), f"{t//3600:02}:{(t % 3600)//60:02}:{t % 60:02}"
