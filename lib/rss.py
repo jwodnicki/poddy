@@ -19,7 +19,7 @@ def create(outfile, site, title, pod, videos, host_url):
     for video in videos:
         item = ET.SubElement(channel, 'item')
         ET.SubElement(item, 'title').text = video['title']
-        ET.SubElement(item, 'enclosure', url=f'{pod_url}/{video['id']}.mp3', length=str(
+        ET.SubElement(item, 'enclosure', url=f"{pod_url}/{video['id']}.mp3", length=str(
             video.get('length', 0)), type='audio/mpeg')
         ET.SubElement(item, 'guid').text = pod_url + '/' + video['id']
         ET.SubElement(item, 'pubDate').text = datetime.datetime.fromisoformat(
