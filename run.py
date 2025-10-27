@@ -37,9 +37,8 @@ def get_pods(args):
         mod_name = f'lib.sites.{site}'
         try:
             mod = importlib.import_module(mod_name)
-        except ModuleNotFoundError as e:
-            if e.name != mod_name:
-                raise
+        except ModuleNotFoundError:
+            continue
         for pod in [s for s in os.listdir(site_dir) if not s.startswith('.')]:
             pod_dir = os.path.join(site_dir, pod)
             config_file = os.path.join(pod_dir, 'config.ini')
